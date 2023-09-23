@@ -14,6 +14,14 @@
 		A15078C22ABEF37F00ACACD2 /* ExpenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078C12ABEF37F00ACACD2 /* ExpenseTests.swift */; };
 		A15078CC2ABEF37F00ACACD2 /* ExpenseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078CB2ABEF37F00ACACD2 /* ExpenseUITests.swift */; };
 		A15078CE2ABEF37F00ACACD2 /* ExpenseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078CD2ABEF37F00ACACD2 /* ExpenseUITestsLaunchTests.swift */; };
+		A15078E02ABEF83F00ACACD2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078DF2ABEF83F00ACACD2 /* LoginView.swift */; };
+		A15078E22ABEF92C00ACACD2 /* UIExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078E12ABEF92C00ACACD2 /* UIExtention.swift */; };
+		A15078E42ABEFC8B00ACACD2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078E32ABEFC8B00ACACD2 /* LoginViewModel.swift */; };
+		A15078E62ABF03BD00ACACD2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078E52ABF03BD00ACACD2 /* SignUpView.swift */; };
+		A15078EA2ABF10C600ACACD2 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078E92ABF10C600ACACD2 /* GetStartedView.swift */; };
+		A15078EF2ABF1FEC00ACACD2 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078EE2ABF1FEC00ACACD2 /* Expense.swift */; };
+		A15078F12ABF21D300ACACD2 /* ExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078F02ABF21D300ACACD2 /* ExpenseViewModel.swift */; };
+		A15078F32ABF225400ACACD2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078F22ABF225400ACACD2 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		A15078C72ABEF37F00ACACD2 /* ExpenseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpenseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A15078CB2ABEF37F00ACACD2 /* ExpenseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseUITests.swift; sourceTree = "<group>"; };
 		A15078CD2ABEF37F00ACACD2 /* ExpenseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A15078DF2ABEF83F00ACACD2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A15078E12ABEF92C00ACACD2 /* UIExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtention.swift; sourceTree = "<group>"; };
+		A15078E32ABEFC8B00ACACD2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A15078E52ABF03BD00ACACD2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A15078E92ABF10C600ACACD2 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
+		A15078EE2ABF1FEC00ACACD2 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		A15078F02ABF21D300ACACD2 /* ExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewModel.swift; sourceTree = "<group>"; };
+		A15078F22ABF225400ACACD2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +110,10 @@
 		A15078AF2ABEF37E00ACACD2 /* Expense */ = {
 			isa = PBXGroup;
 			children = (
+				A15078DE2ABEF7FA00ACACD2 /* UIKit */,
+				A15078DC2ABEF74D00ACACD2 /* ViewModel */,
+				A15078DB2ABEF74300ACACD2 /* Model */,
+				A15078DA2ABEF73000ACACD2 /* View */,
 				A15078B02ABEF37E00ACACD2 /* ExpenseApp.swift */,
 				A15078B22ABEF37E00ACACD2 /* ContentView.swift */,
 				A15078B42ABEF37F00ACACD2 /* Assets.xcassets */,
@@ -125,6 +145,42 @@
 				A15078CD2ABEF37F00ACACD2 /* ExpenseUITestsLaunchTests.swift */,
 			);
 			path = ExpenseUITests;
+			sourceTree = "<group>";
+		};
+		A15078DA2ABEF73000ACACD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A15078DF2ABEF83F00ACACD2 /* LoginView.swift */,
+				A15078E52ABF03BD00ACACD2 /* SignUpView.swift */,
+				A15078E92ABF10C600ACACD2 /* GetStartedView.swift */,
+				A15078F22ABF225400ACACD2 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A15078DB2ABEF74300ACACD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A15078EE2ABF1FEC00ACACD2 /* Expense.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A15078DC2ABEF74D00ACACD2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A15078E32ABEFC8B00ACACD2 /* LoginViewModel.swift */,
+				A15078F02ABF21D300ACACD2 /* ExpenseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A15078DE2ABEF7FA00ACACD2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				A15078E12ABEF92C00ACACD2 /* UIExtention.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +313,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15078E22ABEF92C00ACACD2 /* UIExtention.swift in Sources */,
+				A15078EA2ABF10C600ACACD2 /* GetStartedView.swift in Sources */,
+				A15078F32ABF225400ACACD2 /* Home.swift in Sources */,
+				A15078E02ABEF83F00ACACD2 /* LoginView.swift in Sources */,
+				A15078EF2ABF1FEC00ACACD2 /* Expense.swift in Sources */,
 				A15078B32ABEF37E00ACACD2 /* ContentView.swift in Sources */,
+				A15078F12ABF21D300ACACD2 /* ExpenseViewModel.swift in Sources */,
+				A15078E42ABEFC8B00ACACD2 /* LoginViewModel.swift in Sources */,
+				A15078E62ABF03BD00ACACD2 /* SignUpView.swift in Sources */,
 				A15078B12ABEF37E00ACACD2 /* ExpenseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
