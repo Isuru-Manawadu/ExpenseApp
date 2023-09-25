@@ -16,22 +16,32 @@ struct SignUpView: View {
     var body: some View {
         
         ZStack{
-            Color.black.edgesIgnoringSafeArea(.all)
+            Color.white.edgesIgnoringSafeArea(.all)
             Color.black.opacity(0.04).ignoresSafeArea()
                 
             
             VStack{
                 
-                LinearGradient(colors: [Color(""), Color("")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top)
+                LinearGradient(colors: [Color(""), Color("")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .leading)
                     .frame(height: 300)
                     .overlay {
                         VStack {
-                            Text("Sign Up").font(.system(size: 24))
-                                .bold()
-                                .foregroundColor(.white)
                             Image("a")
                                 .resizable()
+                                .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
                                 .scaledToFit()
+                            
+                            Text("Register").font(.system(size: 24))
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                                .bold()
+                                .foregroundColor(.black)
+                                .frame(width: /*@START_MENU_TOKEN@*/104.0/*@END_MENU_TOKEN@*/, height: 60)
+                            
+                            Text("Create Your Account")
+                                .font(.system(size: 18))
+                            
                         }
                     }
                 
@@ -111,7 +121,7 @@ struct BottomControllers: View {
                 ZStack {
                     LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 10))
                         .frame(height: 50)
-                    Text("Sign Up")
+                    Text("Register")
                         .foregroundColor(.white)
                 }.padding(.horizontal , 20)
                 
@@ -119,45 +129,49 @@ struct BottomControllers: View {
             
             
             VStack{
-                Text("Or")
-                    .foregroundColor(.white)
+//                Text("Or")
+//                    .foregroundColor(.black)
                     
-                Text("Continue with your Social Accounts")
-                    .offset(y:10)
-            }.foregroundColor(.white)
+                Text("Already have an Account?")
+                    .offset(x: -20,y:10)
+            }.foregroundColor(.black)
+            
+                Text("Sign In")
+                .foregroundColor(.blue)
+                .offset(x: 110, y: -30)
             
             VStack{
                 HStack{
                     //Facebook Button
                     
-                    Button {
+//                    Button {
                         
-                    } label: {
-                        ZStack{
-                            Color("Green")
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                            HStack{
-                                Image("fb")
-                                Text("Google").foregroundColor(.white)
-                            }
-                        }
-                    }.buttonBorderShape(.capsule)
-                    .offset(y: 10)
+//                    } label: {
+//                        ZStack{
+//                            Color("Green")
+//                                .clipShape(RoundedRectangle(cornerRadius: 10))
+//                            HStack{
+//                                Image("fb")
+//                                Text("Google").foregroundColor(.white)
+//                            }
+//                        }
+//                    }.buttonBorderShape(.capsule)
+//                    .offset(y: 10)
                     
                     // Apple
-                    Button {
-                        
-                    } label: {
-                        ZStack{
-                            Color(.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                            HStack{
-                                Image("")
-                                Text("X").foregroundColor(.black)
-                            }
-                        }
-                    }
-                    .offset(y: 10)
+//                    Button {
+//
+//                    } label: {
+//                        ZStack{
+//                            Color(.white)
+//                                .clipShape(RoundedRectangle(cornerRadius: 10))
+//                            HStack{
+//                                Image("")
+//                                Text("Twitter").foregroundColor(.black)
+//                            }
+//                        }
+//                    }
+//                    .offset(y: 10)
                     
                 }
             }.padding(.horizontal , 20)

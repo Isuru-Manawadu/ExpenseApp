@@ -13,7 +13,7 @@ struct LoginView: View {
         
         var body: some View {
             ZStack{
-                Color.black.edgesIgnoringSafeArea(.all)
+                Color.white.edgesIgnoringSafeArea(.all)
                 Color.white.opacity(0.04).ignoresSafeArea(edges : .top)
                 
                 VStack{
@@ -24,7 +24,7 @@ struct LoginView: View {
                             VStack {
                                 Text("Sign In").font(.system(size: 30))
                                     .bold()
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.black)
                                 Image("a")
                                     .resizable()
                                     .scaledToFit()
@@ -73,10 +73,10 @@ struct LoginView: View {
                         }
                         Text("Do you have an account?")
                             .offset(x: -30)
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                         Text("Sign Up")
                             
-                            .foregroundColor(.white)
+                            .foregroundColor(.blue)
                             .offset(x: 100, y: -40)
                             
                         

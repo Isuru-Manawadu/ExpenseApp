@@ -60,7 +60,7 @@ struct Home: View {
                     Color ("Gradient 3"),
                     ], startPoint: .topLeading, endPoint: .bottomTrailing))
                 
-                VStack(
+                
             }
             .frame(height:  220)
             .padding(.top)
