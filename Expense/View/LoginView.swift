@@ -25,7 +25,7 @@ struct LoginView: View {
                                 Text("Sign In").font(.system(size: 30))
                                     .bold()
                                     .foregroundColor(.black)
-                                Image("a")
+                                Image("c")
                                     .resizable()
                                     .scaledToFit()
  

@@ -10,28 +10,13 @@ import SwiftUI
 struct GetStartedView: View {
     var body: some View {
         ZStack{
-            Color.black.edgesIgnoringSafeArea(.all)
+           
             VStack{
-                Image("a")
+                Image("c")
                     .resizable()
+                    .frame(width: 200.0, height: 200)
                     .scaledToFit()
-                    .frame(height: 340)
-                    .offset(y: -100)
-                
-                Button {
-                    
-                } label: {
-                    Text("Sign Up")
-                            .foregroundColor(.white)
-                            .background(Color.blue)
-                            .fontWeight(.semibold)
-                            .font(.headline)
-                            .frame(height: 30)
-                    }.padding(.horizontal)
-                    
-            }
-            
-         
+                }
             }
         }
     }

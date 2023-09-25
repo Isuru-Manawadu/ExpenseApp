@@ -26,7 +26,7 @@ struct SignUpView: View {
                     .frame(height: 300)
                     .overlay {
                         VStack {
-                            Image("a")
+                            Image("c")
                                 .resizable()
                                 .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
                                 .scaledToFit()

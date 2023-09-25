@@ -17,7 +17,7 @@ struct DashboardView: View {
                 Image("credit-card")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 300,height: 100)
+                    .frame(width: 300,height: 70)
                     .clipped()
                     .cornerRadius(20)
                 
@@ -85,7 +85,7 @@ struct DashboardView: View {
             
             Rectangle()
                 .stroke(Color.blue)
-                .frame(width: 330, height: 100)
+                .frame(width: 330, height: 50)
                 .offset(y: 160)
             //                .shadow(radius: 5)
             
@@ -95,13 +95,13 @@ struct DashboardView: View {
                     Text("Budget For This Month")
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(Color.black)
-                        .offset(x: 40,y: 140)
+                        .offset(x: 40,y: 160)
                 }
                 HStack{
                     Text("Rs. 10,000")
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(Color.black)
-                        .offset(x: 80,y: 140)
+                        .offset(x: 80,y: 160)
                 }
                 Spacer()
             }
@@ -129,7 +129,7 @@ struct DashboardView: View {
                     .foregroundColor(Color(red: 0.38, green: 0.06, blue: 0.06))
             }
             .offset(y:  300)
-                }
+        }
 
             }
         }

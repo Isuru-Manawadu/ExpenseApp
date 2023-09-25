@@ -27,6 +27,7 @@
 		A18AF9832AC21B6D002F1116 /* IncomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF9822AC21B6D002F1116 /* IncomeModel.swift */; };
 		A18AF9852AC21E7D002F1116 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF9842AC21E7D002F1116 /* ExpensesView.swift */; };
 		A18AF9872AC21E8A002F1116 /* ExpensesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF9862AC21E8A002F1116 /* ExpensesModel.swift */; };
+		A18AF9892AC22BBB002F1116 /* MonthAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF9882AC22BBB002F1116 /* MonthAnalysisView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		A18AF9822AC21B6D002F1116 /* IncomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeModel.swift; sourceTree = "<group>"; };
 		A18AF9842AC21E7D002F1116 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		A18AF9862AC21E8A002F1116 /* ExpensesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesModel.swift; sourceTree = "<group>"; };
+		A18AF9882AC22BBB002F1116 /* MonthAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthAnalysisView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				A18AF97A2AC208FF002F1116 /* MonthBudgetView.swift */,
 				A18AF9802AC21B5A002F1116 /* AddIncome.swift */,
 				A18AF9842AC21E7D002F1116 /* ExpensesView.swift */,
+				A18AF9882AC22BBB002F1116 /* MonthAnalysisView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				A15078E02ABEF83F00ACACD2 /* LoginView.swift in Sources */,
 				A15078EF2ABF1FEC00ACACD2 /* Expense.swift in Sources */,
 				A15078B32ABEF37E00ACACD2 /* ContentView.swift in Sources */,
+				A18AF9892AC22BBB002F1116 /* MonthAnalysisView.swift in Sources */,
 				A15078F52AC01D1300ACACD2 /* DashboardView.swift in Sources */,
 				A18AF97B2AC208FF002F1116 /* MonthBudgetView.swift in Sources */,
 				A18AF9872AC21E8A002F1116 /* ExpensesModel.swift in Sources */,
