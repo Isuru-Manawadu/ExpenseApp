@@ -86,7 +86,6 @@ struct DashboardView: View {
             Rectangle()
                 .stroke(Color.blue)
                 .frame(width: 330, height: 100)
-                .cornerRadius(8)
                 .offset(y: 160)
             //                .shadow(radius: 5)
             
