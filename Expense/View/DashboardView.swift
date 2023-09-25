@@ -25,7 +25,7 @@ struct DashboardView: View {
                     .font(.system(size: 16, weight: .bold))
                     .padding(.top, 8)
                     .offset(y: -60)
-                
+
                 Text("Rs. 25,000.00")
                     .font(.system(size: 24, weight: .semibold))
                     .padding(.top, 4)
@@ -141,3 +141,4 @@ struct DashboardView: View {
         }
     }
 
+// Dashboard Completed

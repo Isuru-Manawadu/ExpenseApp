@@ -22,7 +22,7 @@ struct MonthBudgetView: View {
                     .frame(height: 200)
                     .overlay {
                         VStack {
-                            Text("Add a Category").font(.system(size: 30))
+                            Text("Budget").font(.system(size: 30))
                                 .bold()
                                 .foregroundColor(.black)
                             
