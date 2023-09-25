@@ -10,13 +10,16 @@ import SwiftUI
 struct DashboardView: View {
     var body: some View {
         ZStack{
+            Text("Gasto")
+                .font(.system(size: 30, weight: .bold))
+                .offset(y: -350)
             VStack {
                 Image("credit-card")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300,height: 100)
                     .clipped()
-                    .cornerRadius(8)
+                    .cornerRadius(20)
                 
                 Text("Total Balance")
                     .font(.system(size: 16, weight: .bold))
@@ -40,18 +43,18 @@ struct DashboardView: View {
                 Text("Statics")
                     .font(
                         Font.custom("Poppins", size: 18)
-                            .weight(.medium)
+                            .weight(.bold)
                     )
                     .foregroundColor(.black)
                     .frame(width: 270, height: 20, alignment: .topLeading)
                 
                 Text("AUG")
                     .font(
-                        Font.custom("Poppins", size: 18)
-                            .weight(.medium)
+                        Font.custom("Poppins", size: 20)
+                            .weight(.heavy)
                     )
                     .foregroundColor(.blue)
-                    .frame(width: 43, height: 20, alignment: .topLeading)
+                    .frame(width: 50, height: 20, alignment: .topLeading)
                 
             }.offset(y: -40)
             
@@ -61,10 +64,10 @@ struct DashboardView: View {
                     Text("Rs. 15,000")
                 }}
             .padding()
-            .background(Color.green)
-            .cornerRadius(8)
+            .background(Color(red: 0.47, green: 1, blue: 0.52))
+            .cornerRadius(10)
             .offset(x: -110, y: 40)
-            .foregroundColor(.white)
+            .foregroundColor(Color(red: 0.05, green: 0.44, blue: 0.13))
             
             HStack {
                 VStack{
@@ -73,10 +76,11 @@ struct DashboardView: View {
                 }
             }
             .padding()
-            .background(Color.red)
-            .cornerRadius(8)
+            .background(Color(red: 1, green: 0.62, blue: 0.62))
+            .cornerRadius(10)
             .offset(x: 110, y: 40)
-            .foregroundColor(.white)
+            .foregroundColor(Color(red: 0.38, green: 0.06, blue: 0.06))
+
             
             
             Rectangle()
@@ -121,7 +125,9 @@ struct DashboardView: View {
                 ).offset(y: 300)
             HStack{
                 Text("Education Fee")
+                    .foregroundColor(Color(red: 0.38, green: 0.06, blue: 0.06))
                 Text("Rs. -10,000.00")
+                    .foregroundColor(Color(red: 0.38, green: 0.06, blue: 0.06))
             }
             .offset(y:  300)
                 }
