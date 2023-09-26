@@ -1,28 +1,22 @@
-//
-//  SignUpView.swift
-//  Expense
-//
-//  Created by Isuru Manawadu on 23/09/2023.
-//
-
 import SwiftUI
 
 struct SignUpView: View {
-    
     @StateObject var loginVM: LoginViewModel = LoginViewModel()
     @State private var showAlert = false
     @State private var alertMessage = ""
-    
+    @State private var shouldNavigateToLogin = false
+    @State private var shouldNavigateToDashboard = false
+
     var body: some View {
-        
+
         ZStack {
             Color.white.edgesIgnoringSafeArea(.all)
             Color.black.opacity(0.04).ignoresSafeArea()
-                
-            
+
+
             VStack {
-                
-                LinearGradient(colors: [Color(""), Color("")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges: .leading)
+                LinearGradient(colors: [Color(""), Color("")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea(edges: .leading)
                     .frame(height: 300)
                     .overlay {
                         VStack {
@@ -30,7 +24,7 @@ struct SignUpView: View {
                                 .resizable()
                                 .frame(width: 100.0, height: 100.0)
                                 .scaledToFit()
-                            
+
                             Text("Register")
                                 .font(.system(size: 24))
                                 .fontWeight(.bold)
@@ -39,19 +33,22 @@ struct SignUpView: View {
                                 .bold()
                                 .foregroundColor(.black)
                                 .frame(width: 104.0, height: 60)
-                            
+
                             Text("Create Your Account")
                                 .font(.system(size: 18))
                         }
                     }
-                
-                BottomControllers(loginVM: loginVM, showAlert: $showAlert, alertMessage: $alertMessage)
+
+                BottomControllers(loginVM: loginVM, showAlert: $showAlert, alertMessage: $alertMessage, shouldNavigateToLogin: $shouldNavigateToLogin, shouldNavigateToDashboard: $shouldNavigateToDashboard)
                 Spacer()
             }
+
+            NavigationLink(destination: LoginView(), isActive: $shouldNavigateToLogin) {
+                EmptyView()
+            }
             
-            NavigationLink(isActive: $loginVM.showSignInView) {
-                LoginView()
-            } label: {
+            NavigationLink(destination: DashboardView(), isActive: $shouldNavigateToDashboard) {
+                EmptyView()
             }
         }
         .alert(isPresented: $showAlert) {
@@ -67,12 +64,14 @@ struct LoginView_Previews: PreviewProvider {
 }
 
 struct BottomControllers: View {
-    
+
     @ObservedObject var loginVM: LoginViewModel
     @FocusState var focus
     @Binding var showAlert: Bool
     @Binding var alertMessage: String
-    
+    @Binding var shouldNavigateToLogin: Bool
+    @Binding var shouldNavigateToDashboard: Bool
+
     var body: some View {
         VStack(spacing: 20) {
             VStack {
@@ -86,7 +85,7 @@ struct BottomControllers: View {
                     }
             }
             .padding(.horizontal, 20)
-            
+
             VStack {
                 RoundedRectangle(cornerRadius: 70)
                     .foregroundColor(.white)
@@ -98,7 +97,7 @@ struct BottomControllers: View {
                     }
             }
             .padding(.horizontal, 20)
-            
+
             VStack {
                 RoundedRectangle(cornerRadius: 70)
                     .foregroundColor(.white)
@@ -110,7 +109,7 @@ struct BottomControllers: View {
                     }
             }
             .padding(.horizontal, 20)
-            
+
             Button {
                 if loginVM.password == loginVM.confirmPassword {
                     // Call your registration API here
@@ -124,7 +123,7 @@ struct BottomControllers: View {
                         "password": loginVM.password
                     ]
                     request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
-                    
+
                     URLSession.shared.dataTask(with: request) { data, response, error in
                         if let data = data {
                             if let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
@@ -132,6 +131,10 @@ struct BottomControllers: View {
                                     DispatchQueue.main.async {
                                         showAlert = true
                                         alertMessage = message
+                                        if success {
+                                            shouldNavigateToLogin = true
+                                            shouldNavigateToDashboard = true
+                                        }
                                     }
                                 }
                             }
@@ -145,29 +148,34 @@ struct BottomControllers: View {
                     showAlert = true
                 }
             } label: {
-                
+
                 ZStack {
                     LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing)
                         .ignoresSafeArea(edges: .top)
                         .clipShape(RoundedRectangle(cornerRadius: 70))
                         .frame(height: 50)
+
+
                     Text("Register")
                         .foregroundColor(.white)
                 }
                 .padding(.horizontal, 20)
-                
+
             }
-            
+
             VStack {
                 Text("Already have an Account?")
                     .offset(x: -20, y: 10)
             }
             .foregroundColor(.black)
-            
-            Text("Sign In")
-                .foregroundColor(.blue)
-                .offset(x: 110, y: -30)
-            
+
+            NavigationLink(destination: LoginView(), isActive: $shouldNavigateToLogin) {
+                Text("Sign In")
+                    .foregroundColor(.blue)
+                    .offset(x: 110, y: -30)
+            }
+            .padding(.horizontal, 20)
+
             VStack {
                 HStack {
                     // Add buttons for other social login methods if needed

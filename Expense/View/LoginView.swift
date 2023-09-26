@@ -5,13 +5,13 @@ struct LoginView: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
     @State private var shouldNavigateToDashboard = false
-    
+
     var body: some View {
         NavigationView {
             ZStack {
                 Color.white.edgesIgnoringSafeArea(.all)
                 Color.white.opacity(0.04).ignoresSafeArea(edges: .top)
-                
+
                 VStack {
                     LinearGradient(colors: [Color(""), Color("")], startPoint: .topLeading, endPoint: .bottomTrailing)
                         .ignoresSafeArea(edges: .top)
@@ -22,7 +22,7 @@ struct LoginView: View {
                                     .resizable()
                                     .frame(width: 100.0, height: 100.0)
                                     .scaledToFit()
-                                
+
                                 Text("Welcome to Gasto")
                                     .font(.system(size: 24))
                                     .fontWeight(.bold)
@@ -32,12 +32,12 @@ struct LoginView: View {
                                     .foregroundColor(.black)
                                     .frame(width: 250, height: 50)
                                     .offset(y: 20)
-                                
+
                                 Text("Sign In")
                                     .font(.system(size: 18))
                             }
                         }
-                    
+
                     VStack(spacing: 20) {
                         VStack {
                             RoundedRectangle(cornerRadius: 10)
@@ -49,7 +49,7 @@ struct LoginView: View {
                                 }
                         }
                         .padding(.horizontal, 20)
-                        
+
                         VStack {
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(.white)
@@ -60,7 +60,7 @@ struct LoginView: View {
                                 }
                         }
                         .padding(.horizontal, 20)
-                        
+
                         Button(action: {
                             // Call your login API here
                             // Replace the URL below with your actual API endpoint
@@ -73,7 +73,7 @@ struct LoginView: View {
                                 "password": loginVM.password
                             ]
                             request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
-                            
+
                             URLSession.shared.dataTask(with: request) { data, response, error in
                                 if let data = data {
                                     if let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
@@ -108,11 +108,11 @@ struct LoginView: View {
                                     .foregroundColor(.white)
                             }.padding(.horizontal, 20)
                         }
-                        
+
                         Text("Do you have an account?")
                             .offset(x: -30)
                             .foregroundColor(.black)
-                        
+
                         NavigationLink(destination: DashboardView(), isActive: $shouldNavigateToDashboard) {
                             Text("Sign Up")
                                 .foregroundColor(.blue)
@@ -121,7 +121,7 @@ struct LoginView: View {
                     }
                     .padding()
                     .offset(y: 0)
-                    
+
                     Spacer()
                 }
             }
@@ -131,11 +131,10 @@ struct LoginView: View {
             .navigationBarHidden(true)
         }
     }
-    
-    
-    struct LoginView_Previews: PreviewProvider {
-        static var previews: some View {
-            LoginView()
-        }
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
     }
+}
 }
