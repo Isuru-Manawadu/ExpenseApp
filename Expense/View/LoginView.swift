@@ -1,34 +1,31 @@
-//
-//  LoginView.swift
-//  Expense
-//
-//  Created by Isuru Manawadu on 23/09/2023.
-//
-
 import SwiftUI
 
 struct LoginView: View {
-   
-        @StateObject var loginVM : LoginViewModel = LoginViewModel()
-        
-        var body: some View {
-            ZStack{
+    @StateObject var loginVM: LoginViewModel = LoginViewModel()
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    @State private var shouldNavigateToDashboard = false
+    
+    var body: some View {
+        NavigationView {
+            ZStack {
                 Color.white.edgesIgnoringSafeArea(.all)
-                Color.white.opacity(0.04).ignoresSafeArea(edges : .top)
+                Color.white.opacity(0.04).ignoresSafeArea(edges: .top)
                 
-                VStack{
-                    LinearGradient(colors: [Color(""), Color("")],
-                                   startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top)
+                VStack {
+                    LinearGradient(colors: [Color(""), Color("")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                        .ignoresSafeArea(edges: .top)
                         .frame(height: 300)
                         .overlay {
                             VStack {
                                 Image("c")
                                     .resizable()
-                                    .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 100.0, height: 100.0)
                                     .scaledToFit()
                                 
-                                Text("Welcome to Gasto").font(.system(size: 24))
-                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                Text("Welcome to Gasto")
+                                    .font(.system(size: 24))
+                                    .fontWeight(.bold)
                                     .multilineTextAlignment(.center)
                                     .lineLimit(1)
                                     .bold()
@@ -36,19 +33,14 @@ struct LoginView: View {
                                     .frame(width: 250, height: 50)
                                     .offset(y: 20)
                                 
-                                Text("Sign In ")
+                                Text("Sign In")
                                     .font(.system(size: 18))
-                                    .offset(y: 20)
- 
                             }
                         }
                     
-                    
-                    VStack(spacing : 20){
-                        
-                        
-                        VStack{
-                            RoundedRectangle(cornerRadius: 70)
+                    VStack(spacing: 20) {
+                        VStack {
+                            RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(.white)
                                 .frame(height: 50)
                                 .overlay {
@@ -56,10 +48,10 @@ struct LoginView: View {
                                         .padding(.leading, 10)
                                 }
                         }
-                        .padding(.horizontal , 20)
-                                                
-                        VStack{
-                            RoundedRectangle(cornerRadius: 70)
+                        .padding(.horizontal, 20)
+                        
+                        VStack {
+                            RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(.white)
                                 .frame(height: 50)
                                 .overlay {
@@ -67,47 +59,83 @@ struct LoginView: View {
                                         .padding(.leading, 10)
                                 }
                         }
-                        .padding(.horizontal , 20)
+                        .padding(.horizontal, 20)
                         
-                        
-                        Button {
+                        Button(action: {
+                            // Call your login API here
+                            // Replace the URL below with your actual API endpoint
+                            let url = URL(string: "http://localhost:3000/userLogin")!
+                            var request = URLRequest(url: url)
+                            request.httpMethod = "POST"
+                            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                            let parameters: [String: Any] = [
+                                "email": loginVM.email,
+                                "password": loginVM.password
+                            ]
+                            request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
                             
-                        } label: {
-                            
+                            URLSession.shared.dataTask(with: request) { data, response, error in
+                                if let data = data {
+                                    if let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                                        if let success = responseJSON["success"] as? Bool {
+                                            DispatchQueue.main.async {
+                                                if success {
+                                                    // Login successful, navigate to DashboardView
+                                                    shouldNavigateToDashboard = true
+                                                } else {
+                                                    // Login failed, show an alert
+                                                    if let message = responseJSON["message"] as? String {
+                                                        alertMessage = message
+                                                    } else {
+                                                        alertMessage = "Login failed. Please try again."
+                                                    }
+                                                    showAlert = true
+                                                }
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    print(error?.localizedDescription ?? "Unknown error")
+                                }
+                            }.resume()
+                        }) {
                             ZStack {
-                                LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
+                                LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                                    .ignoresSafeArea(edges: .top)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
                                     .frame(height: 50)
                                 Text("Sign In")
                                     .foregroundColor(.white)
-                            }.padding(.horizontal , 20)
-                            
+                            }.padding(.horizontal, 20)
                         }
+                        
                         Text("Do you have an account?")
                             .offset(x: -30)
                             .foregroundColor(.black)
-                        Text("Sign Up")
-                            
-                            .foregroundColor(.blue)
-                            .offset(x: 100, y: -40)
-                            
                         
-                    }.padding()
-                    
-                        .offset(y: 0)
-                    
+                        NavigationLink(destination: DashboardView(), isActive: $shouldNavigateToDashboard) {
+                            Text("Sign Up")
+                                .foregroundColor(.blue)
+                                .offset(x: 100, y: -40)
+                        }
+                    }
+                    .padding()
+                    .offset(y: 0)
                     
                     Spacer()
                 }
-                
-                
-                
             }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Alert"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            }
+            .navigationBarHidden(true)
         }
     }
-
-    struct SignInView_Previews: PreviewProvider {
+    
+    
+    struct LoginView_Previews: PreviewProvider {
         static var previews: some View {
             LoginView()
         }
     }
-
+}
