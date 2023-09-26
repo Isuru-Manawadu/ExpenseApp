@@ -55,16 +55,16 @@ struct AddIncome : View {
                         }
                         .padding(.horizontal , 20)
                         
-                        VStack{
-                            RoundedRectangle(cornerRadius: 70)
-                                .foregroundColor(.white)
-                                .frame(height: 50)
-                                .overlay {
-                                    SecureField("Category", text: $IncomeBV.category)
-                                        .padding(.leading, 10)
-                                }
-                        }
-                        .padding(.horizontal , 20)
+//                        VStack{
+//                            RoundedRectangle(cornerRadius: 70)
+//                                .foregroundColor(.white)
+//                                .frame(height: 50)
+//                                .overlay {
+//                                    SecureField("Category", text: $IncomeBV.category)
+//                                        .padding(.leading, 10)
+//                                }
+//                        }
+//                        .padding(.horizontal , 20)
                         
                         VStack{
                             RoundedRectangle(cornerRadius: 70)

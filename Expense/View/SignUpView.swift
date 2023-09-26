@@ -9,56 +9,53 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @StateObject var loginVM : LoginViewModel = LoginViewModel()
-    
-    
+    @StateObject var loginVM: LoginViewModel = LoginViewModel()
+    @State private var showAlert = false
+    @State private var alertMessage = ""
     
     var body: some View {
         
-        ZStack{
+        ZStack {
             Color.white.edgesIgnoringSafeArea(.all)
             Color.black.opacity(0.04).ignoresSafeArea()
                 
             
-            VStack{
+            VStack {
                 
-                LinearGradient(colors: [Color(""), Color("")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .leading)
+                LinearGradient(colors: [Color(""), Color("")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges: .leading)
                     .frame(height: 300)
                     .overlay {
                         VStack {
                             Image("c")
                                 .resizable()
-                                .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
+                                .frame(width: 100.0, height: 100.0)
                                 .scaledToFit()
                             
-                            Text("Register").font(.system(size: 24))
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            Text("Register")
+                                .font(.system(size: 24))
+                                .fontWeight(.bold)
                                 .multilineTextAlignment(.center)
-                                .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                                .lineLimit(2)
                                 .bold()
                                 .foregroundColor(.black)
-                                .frame(width: /*@START_MENU_TOKEN@*/104.0/*@END_MENU_TOKEN@*/, height: 60)
+                                .frame(width: 104.0, height: 60)
                             
                             Text("Create Your Account")
                                 .font(.system(size: 18))
-                            
                         }
                     }
                 
-                BottomControllers(loginVM: loginVM)
+                BottomControllers(loginVM: loginVM, showAlert: $showAlert, alertMessage: $alertMessage)
                 Spacer()
             }
-//            .sheet(isPresented: $loginVM.showSignInView) {
-//                SignInView()
-//            }
             
             NavigationLink(isActive: $loginVM.showSignInView) {
                 LoginView()
             } label: {
-            
             }
-
-            
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Alert"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
     }
 }
@@ -71,13 +68,14 @@ struct LoginView_Previews: PreviewProvider {
 
 struct BottomControllers: View {
     
-
-    @ObservedObject var loginVM : LoginViewModel
+    @ObservedObject var loginVM: LoginViewModel
     @FocusState var focus
+    @Binding var showAlert: Bool
+    @Binding var alertMessage: String
     
     var body: some View {
-        VStack (spacing: 20){
-            VStack{
+        VStack(spacing: 20) {
+            VStack {
                 RoundedRectangle(cornerRadius: 70)
                     .foregroundColor(.white)
                     .frame(height: 50)
@@ -87,9 +85,9 @@ struct BottomControllers: View {
                             .focused($focus)
                     }
             }
-            .padding(.horizontal , 20)
+            .padding(.horizontal, 20)
             
-            VStack{
+            VStack {
                 RoundedRectangle(cornerRadius: 70)
                     .foregroundColor(.white)
                     .frame(height: 50)
@@ -99,9 +97,9 @@ struct BottomControllers: View {
                             .focused($focus)
                     }
             }
-            .padding(.horizontal , 20)
+            .padding(.horizontal, 20)
             
-            VStack{
+            VStack {
                 RoundedRectangle(cornerRadius: 70)
                     .foregroundColor(.white)
                     .frame(height: 50)
@@ -111,76 +109,76 @@ struct BottomControllers: View {
                             .focused($focus)
                     }
             }
-            .padding(.horizontal , 20)
-            
+            .padding(.horizontal, 20)
             
             Button {
-                loginVM.showSignInView = true
+                if loginVM.password == loginVM.confirmPassword {
+                    // Call your registration API here
+                    // Replace the URL below with your actual API endpoint
+                    let url = URL(string: "http://localhost:3000/register")!
+                    var request = URLRequest(url: url)
+                    request.httpMethod = "POST"
+                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                    let parameters: [String: Any] = [
+                        "email": loginVM.email,
+                        "password": loginVM.password
+                    ]
+                    request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+                    
+                    URLSession.shared.dataTask(with: request) { data, response, error in
+                        if let data = data {
+                            if let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                                if let success = responseJSON["success"] as? Bool, let message = responseJSON["message"] as? String {
+                                    DispatchQueue.main.async {
+                                        showAlert = true
+                                        alertMessage = message
+                                    }
+                                }
+                            }
+                        } else {
+                            print(error?.localizedDescription ?? "Unknown error")
+                        }
+                    }.resume()
+                } else {
+                    // Show an alert if passwords don't match
+                    alertMessage = "Passwords do not match"
+                    showAlert = true
+                }
             } label: {
                 
                 ZStack {
-                    LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
+                    LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                        .ignoresSafeArea(edges: .top)
+                        .clipShape(RoundedRectangle(cornerRadius: 70))
                         .frame(height: 50)
                     Text("Register")
                         .foregroundColor(.white)
-                }.padding(.horizontal , 20)
+                }
+                .padding(.horizontal, 20)
                 
             }
             
-            
-            VStack{
-//                Text("Or")
-//                    .foregroundColor(.black)
-                    
+            VStack {
                 Text("Already have an Account?")
-                    .offset(x: -20,y:10)
-            }.foregroundColor(.black)
+                    .offset(x: -20, y: 10)
+            }
+            .foregroundColor(.black)
             
-                Text("Sign In")
+            Text("Sign In")
                 .foregroundColor(.blue)
                 .offset(x: 110, y: -30)
             
-            VStack{
-                HStack{
-                    //Facebook Button
-                    
-//                    Button {
-                        
-//                    } label: {
-//                        ZStack{
-//                            Color("Green")
-//                                .clipShape(RoundedRectangle(cornerRadius: 10))
-//                            HStack{
-//                                Image("fb")
-//                                Text("Google").foregroundColor(.white)
-//                            }
-//                        }
-//                    }.buttonBorderShape(.capsule)
-//                    .offset(y: 10)
-                    
-                    // Apple
-//                    Button {
-//
-//                    } label: {
-//                        ZStack{
-//                            Color(.white)
-//                                .clipShape(RoundedRectangle(cornerRadius: 10))
-//                            HStack{
-//                                Image("")
-//                                Text("Twitter").foregroundColor(.black)
-//                            }
-//                        }
-//                    }
-//                    .offset(y: 10)
-                    
+            VStack {
+                HStack {
+                    // Add buttons for other social login methods if needed
                 }
-            }.padding(.horizontal , 20)
-                .frame(height: 50)
-            
-        }.padding()
-            .onTapGesture {
-                focus = false
             }
+            .padding(.horizontal, 20)
+            .frame(height: 50)
+        }
+        .padding()
+        .onTapGesture {
+            focus = false
+        }
     }
 }
-
