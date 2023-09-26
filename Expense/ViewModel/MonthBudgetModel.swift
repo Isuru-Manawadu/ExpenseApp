@@ -10,9 +10,9 @@ import SwiftUI
 
 class MonthBudgetModel : ObservableObject {
     
-    @Published var category : String = ""
+    @Published var Category : String = ""
     @Published var Duration : String = ""
-//    @Published var location : String = ""
+    @Published var Allocate : String = ""
     
     @Published var showInMonthBudgetView : Bool = false
    

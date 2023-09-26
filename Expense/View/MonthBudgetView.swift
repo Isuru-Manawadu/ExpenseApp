@@ -38,7 +38,7 @@ struct MonthBudgetView: View {
                             .foregroundColor(.white)
                             .frame(height: 50)
                             .overlay {
-                                TextField("Category", text: $MonthBV.category)
+                                TextField("Category", text: $MonthBV.Category)
                                     .padding(.leading, 10)
                             }
                     }
@@ -50,6 +50,17 @@ struct MonthBudgetView: View {
                             .frame(height: 50)
                             .overlay {
                                 SecureField("Duration (Month/Week)", text: $MonthBV.Duration)
+                                    .padding(.leading, 10)
+                            }
+                    }
+                    .padding(.horizontal , 20)
+                    
+                    VStack{
+                        RoundedRectangle(cornerRadius: 70)
+                            .foregroundColor(.white)
+                            .frame(height: 50)
+                            .overlay {
+                                SecureField("Allocate", text: $MonthBV.Allocate)
                                     .padding(.leading, 10)
                             }
                     }
@@ -83,7 +94,7 @@ struct MonthBudgetView: View {
                     
                 }.padding()
                 
-                    .offset(y: -50)
+                    .offset(y: -30)
                 
                 
                 Spacer()
