@@ -34,7 +34,7 @@ struct MonthBudgetView: View {
                     
                     
                     VStack{
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 70)
                             .foregroundColor(.white)
                             .frame(height: 50)
                             .overlay {
@@ -45,7 +45,7 @@ struct MonthBudgetView: View {
                     .padding(.horizontal , 20)
                                             
                     VStack{
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 70)
                             .foregroundColor(.white)
                             .frame(height: 50)
                             .overlay {
@@ -60,9 +60,9 @@ struct MonthBudgetView: View {
                     } label: {
                         
                         ZStack {
-                            LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 10))
+                            LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
                                 .frame(height: 50)
-                            Text("Add a Category")
+                            Text("Add")
                                 .foregroundColor(.white)
                         }.padding(.horizontal , 20)
                         
@@ -73,7 +73,7 @@ struct MonthBudgetView: View {
                     } label: {
                         
                         ZStack {
-                            LinearGradient(colors: [Color("Gradient 2"), Color("Gradient 2")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 10))
+                            LinearGradient(colors: [Color("Gradient 2"), Color("Gradient 2")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
                                 .frame(height: 50)
                             Text("Clear Fields")
                                 .foregroundColor(.white)

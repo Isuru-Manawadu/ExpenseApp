@@ -78,7 +78,7 @@ struct BottomControllers: View {
     var body: some View {
         VStack (spacing: 20){
             VStack{
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 70)
                     .foregroundColor(.white)
                     .frame(height: 50)
                     .overlay {
@@ -90,7 +90,7 @@ struct BottomControllers: View {
             .padding(.horizontal , 20)
             
             VStack{
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 70)
                     .foregroundColor(.white)
                     .frame(height: 50)
                     .overlay {
@@ -102,7 +102,7 @@ struct BottomControllers: View {
             .padding(.horizontal , 20)
             
             VStack{
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 70)
                     .foregroundColor(.white)
                     .frame(height: 50)
                     .overlay {
@@ -119,7 +119,7 @@ struct BottomControllers: View {
             } label: {
                 
                 ZStack {
-                    LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 10))
+                    LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
                         .frame(height: 50)
                     Text("Register")
                         .foregroundColor(.white)

@@ -17,7 +17,7 @@ struct DashboardView: View {
                 Image("credit-card")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 300,height: 70)
+                    .frame(width: 300,height: 100)
                     .clipped()
                     .cornerRadius(20)
                 
@@ -61,7 +61,6 @@ struct DashboardView: View {
             HStack {
                 VStack{
                     Text("Income")
-                    Text("Rs. 15,000")
                 }}
             .padding()
             .background(Color(red: 0.47, green: 1, blue: 0.52))
@@ -72,7 +71,6 @@ struct DashboardView: View {
             HStack {
                 VStack{
                     Text("Expense")
-                    Text("Rs. 5,000")
                 }
             }
             .padding()

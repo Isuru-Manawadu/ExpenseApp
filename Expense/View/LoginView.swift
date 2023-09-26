@@ -22,12 +22,23 @@ struct LoginView: View {
                         .frame(height: 300)
                         .overlay {
                             VStack {
-                                Text("Sign In").font(.system(size: 30))
-                                    .bold()
-                                    .foregroundColor(.black)
                                 Image("c")
                                     .resizable()
+                                    .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
                                     .scaledToFit()
+                                
+                                Text("Welcome to Gasto").font(.system(size: 24))
+                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(1)
+                                    .bold()
+                                    .foregroundColor(.black)
+                                    .frame(width: 250, height: 50)
+                                    .offset(y: 20)
+                                
+                                Text("Sign In ")
+                                    .font(.system(size: 18))
+                                    .offset(y: 20)
  
                             }
                         }
@@ -37,7 +48,7 @@ struct LoginView: View {
                         
                         
                         VStack{
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 70)
                                 .foregroundColor(.white)
                                 .frame(height: 50)
                                 .overlay {
@@ -48,7 +59,7 @@ struct LoginView: View {
                         .padding(.horizontal , 20)
                                                 
                         VStack{
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 70)
                                 .foregroundColor(.white)
                                 .frame(height: 50)
                                 .overlay {
@@ -64,7 +75,7 @@ struct LoginView: View {
                         } label: {
                             
                             ZStack {
-                                LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 10))
+                                LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
                                     .frame(height: 50)
                                 Text("Sign In")
                                     .foregroundColor(.white)
@@ -82,7 +93,7 @@ struct LoginView: View {
                         
                     }.padding()
                     
-                        .offset(y: 60)
+                        .offset(y: 0)
                     
                     
                     Spacer()
