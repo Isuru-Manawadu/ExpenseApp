@@ -30,33 +30,53 @@ struct StatisticScreen: View {
                 //Middle Text
                 VStack{
                     
-                    Button {
-                        
-                    } label: {
-                        
-                        ZStack {
-                            LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
-                                .frame(width: 200, height: 40)
-                            Text("Add Your Income")
-                                .foregroundColor(.white)
-                        }.padding(.horizontal , 20)
-                            
-                        
-                    }.offset(y: 240)
                     
+                    // use to add income green circle
                     Button {
                         
                     } label: {
-                        
-                        ZStack {
-                            LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
-                                .frame(width: 200, height: 40)
-                            Text("Add Your Expense")
-                                .foregroundColor(.white)
-                        }.padding(.horizontal , 20)
+                        HStack{
+                            ZStack {
+                                LinearGradient(colors: [Color("green"), Color("green")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
+                                    .frame(width: 90, height: 90)
+                                Text("+")
+                                    .foregroundColor(.white)
+                            }.padding(.horizontal , 20)
                             
+                            
+                        }.offset(x: 30, y: 240)
                         
-                    }.offset(y: 260)
+                        // use to check balance blue circle
+                        Button {
+                            
+                        } label: {
+                            
+                            ZStack {
+                                LinearGradient(colors: [Color("pink"), Color("pink")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .frame(width: 130,height: 60)
+                                Text("Balance")
+                                    .foregroundColor(.white)
+                            }.padding(.horizontal , 20)
+                            
+                        }.offset(y: 240)
+                        
+                        // use to add expense red circle
+                        Button {
+                            
+                        } label: {
+                            
+                            ZStack {
+                                
+                                LinearGradient(colors: [Color("red"), Color("red")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
+                                    .frame(width: 90, height: 90)
+                                    
+                                Text("-")
+                                    .foregroundColor(.white)
+                            }.padding(.horizontal , 20)
+                            
+                            
+                        }.offset(x: -30, y: 240)
+                    }
                     
                     
                     Text("Income")
