@@ -1,3 +1,10 @@
+//
+//  SignUpView.swift
+//  Expense
+//
+//  Created by Isuru Manawadu on 25/09/2023.
+//
+
 import SwiftUI
 
 struct SignUpView: View {
