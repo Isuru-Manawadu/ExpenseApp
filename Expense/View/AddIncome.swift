@@ -11,6 +11,7 @@ struct AddIncome: View {
     @StateObject var incomeBV: IncomeModel = IncomeModel()
     @State private var showAlert = false
     @State private var alertMessage = ""
+    @Binding var isPresented: Bool
     
     var body: some View {
         ZStack {
@@ -118,8 +119,8 @@ struct AddIncome: View {
     }
 }
 
-struct AddIncome_Previews: PreviewProvider {
-    static var previews: some View {
-        AddIncome()
-    }
-}
+//struct AddIncome_Previews: PreviewProvider {
+//    static var previews: some View {
+////        AddIncome()
+//    }
+//}
