@@ -20,7 +20,6 @@
 		A15078E62ABF03BD00ACACD2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078E52ABF03BD00ACACD2 /* SignUpView.swift */; };
 		A15078EA2ABF10C600ACACD2 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078E92ABF10C600ACACD2 /* GetStartedView.swift */; };
 		A15078EF2ABF1FEC00ACACD2 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078EE2ABF1FEC00ACACD2 /* Expense.swift */; };
-		A15078F52AC01D1300ACACD2 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15078F42AC01D1300ACACD2 /* DashboardView.swift */; };
 		A18AF97B2AC208FF002F1116 /* MonthBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF97A2AC208FF002F1116 /* MonthBudgetView.swift */; };
 		A18AF97F2AC2148D002F1116 /* MonthBudgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF97E2AC2148D002F1116 /* MonthBudgetModel.swift */; };
 		A18AF9812AC21B5A002F1116 /* AddIncome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF9802AC21B5A002F1116 /* AddIncome.swift */; };
@@ -28,6 +27,12 @@
 		A18AF9852AC21E7D002F1116 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF9842AC21E7D002F1116 /* ExpensesView.swift */; };
 		A18AF9872AC21E8A002F1116 /* ExpensesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF9862AC21E8A002F1116 /* ExpensesModel.swift */; };
 		A18AF9892AC22BBB002F1116 /* MonthAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF9882AC22BBB002F1116 /* MonthAnalysisView.swift */; };
+		A18AF9952AC42377002F1116 /* NewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF9942AC42377002F1116 /* NewHome.swift */; };
+		A18AF9972AC423B7002F1116 /* StatisticScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF9962AC423B7002F1116 /* StatisticScreen.swift */; };
+		A18AF9992AC423F5002F1116 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF9982AC423F5002F1116 /* Data.swift */; };
+		A18AF99B2AC424D5002F1116 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF99A2AC424D5002F1116 /* CircularProgressView.swift */; };
+		A18AF99D2AC424F0002F1116 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF99C2AC424F0002F1116 /* FilterView.swift */; };
+		A18AF99F2AC4250D002F1116 /* TemplateItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AF99E2AC4250D002F1116 /* TemplateItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +69,6 @@
 		A15078E52ABF03BD00ACACD2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A15078E92ABF10C600ACACD2 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		A15078EE2ABF1FEC00ACACD2 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
-		A15078F42AC01D1300ACACD2 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		A18AF97A2AC208FF002F1116 /* MonthBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBudgetView.swift; sourceTree = "<group>"; };
 		A18AF97E2AC2148D002F1116 /* MonthBudgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBudgetModel.swift; sourceTree = "<group>"; };
 		A18AF9802AC21B5A002F1116 /* AddIncome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncome.swift; sourceTree = "<group>"; };
@@ -72,6 +76,20 @@
 		A18AF9842AC21E7D002F1116 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		A18AF9862AC21E8A002F1116 /* ExpensesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesModel.swift; sourceTree = "<group>"; };
 		A18AF9882AC22BBB002F1116 /* MonthAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthAnalysisView.swift; sourceTree = "<group>"; };
+		A18AF9942AC42377002F1116 /* NewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHome.swift; sourceTree = "<group>"; };
+		A18AF9962AC423B7002F1116 /* StatisticScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticScreen.swift; sourceTree = "<group>"; };
+		A18AF9982AC423F5002F1116 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Data.swift; path = ../../../Data.swift; sourceTree = "<group>"; };
+		A18AF99A2AC424D5002F1116 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		A18AF99C2AC424F0002F1116 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		A18AF99E2AC4250D002F1116 /* TemplateItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateItemView.swift; sourceTree = "<group>"; };
+		A18AF9A22AC4267B002F1116 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		A18AF9AA2AC427FE002F1116 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		A18AF9AC2AC42820002F1116 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		A18AF9AD2AC4282E002F1116 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		A18AF9AE2AC4283B002F1116 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		A18AF9AF2AC42846002F1116 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		A18AF9B02AC42854002F1116 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		A18AF9B12AC42865002F1116 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +140,7 @@
 		A15078AF2ABEF37E00ACACD2 /* Expense */ = {
 			isa = PBXGroup;
 			children = (
+				A18AF9A02AC4262C002F1116 /* New Group */,
 				A15078DE2ABEF7FA00ACACD2 /* UIKit */,
 				A15078DC2ABEF74D00ACACD2 /* ViewModel */,
 				A15078DB2ABEF74300ACACD2 /* Model */,
@@ -165,11 +184,15 @@
 				A15078DF2ABEF83F00ACACD2 /* LoginView.swift */,
 				A15078E52ABF03BD00ACACD2 /* SignUpView.swift */,
 				A15078E92ABF10C600ACACD2 /* GetStartedView.swift */,
-				A15078F42AC01D1300ACACD2 /* DashboardView.swift */,
 				A18AF97A2AC208FF002F1116 /* MonthBudgetView.swift */,
 				A18AF9802AC21B5A002F1116 /* AddIncome.swift */,
 				A18AF9842AC21E7D002F1116 /* ExpensesView.swift */,
 				A18AF9882AC22BBB002F1116 /* MonthAnalysisView.swift */,
+				A18AF9942AC42377002F1116 /* NewHome.swift */,
+				A18AF9962AC423B7002F1116 /* StatisticScreen.swift */,
+				A18AF99A2AC424D5002F1116 /* CircularProgressView.swift */,
+				A18AF99C2AC424F0002F1116 /* FilterView.swift */,
+				A18AF99E2AC4250D002F1116 /* TemplateItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +212,7 @@
 				A18AF97E2AC2148D002F1116 /* MonthBudgetModel.swift */,
 				A18AF9822AC21B6D002F1116 /* IncomeModel.swift */,
 				A18AF9862AC21E8A002F1116 /* ExpensesModel.swift */,
+				A18AF9982AC423F5002F1116 /* Data.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -199,6 +223,85 @@
 				A15078E12ABEF92C00ACACD2 /* UIExtention.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		A18AF9A02AC4262C002F1116 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				A18AF9A92AC427D9002F1116 /* OrangeSecondary.colorset */,
+				A18AF9A82AC427CB002F1116 /* OrangePrimary.colorset */,
+				A18AF9A72AC427BD002F1116 /* Filtercolor.colorset */,
+				A18AF9A62AC427AF002F1116 /* Cyan.colorset */,
+				A18AF9A52AC4279D002F1116 /* BlueSecondary.colorset */,
+				A18AF9A42AC4278F002F1116 /* BluePrimary.colorset */,
+				A18AF9A32AC426B7002F1116 /* Applcon.appiconset */,
+				A18AF9A12AC42646002F1116 /* AccentColor.colorset */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A18AF9A12AC42646002F1116 /* AccentColor.colorset */ = {
+			isa = PBXGroup;
+			children = (
+				A18AF9A22AC4267B002F1116 /* Contents.json */,
+			);
+			path = AccentColor.colorset;
+			sourceTree = "<group>";
+		};
+		A18AF9A32AC426B7002F1116 /* Applcon.appiconset */ = {
+			isa = PBXGroup;
+			children = (
+				A18AF9B12AC42865002F1116 /* Contents.json */,
+			);
+			path = Applcon.appiconset;
+			sourceTree = "<group>";
+		};
+		A18AF9A42AC4278F002F1116 /* BluePrimary.colorset */ = {
+			isa = PBXGroup;
+			children = (
+				A18AF9B02AC42854002F1116 /* Contents.json */,
+			);
+			path = BluePrimary.colorset;
+			sourceTree = "<group>";
+		};
+		A18AF9A52AC4279D002F1116 /* BlueSecondary.colorset */ = {
+			isa = PBXGroup;
+			children = (
+				A18AF9AF2AC42846002F1116 /* Contents.json */,
+			);
+			path = BlueSecondary.colorset;
+			sourceTree = "<group>";
+		};
+		A18AF9A62AC427AF002F1116 /* Cyan.colorset */ = {
+			isa = PBXGroup;
+			children = (
+				A18AF9AE2AC4283B002F1116 /* Contents.json */,
+			);
+			path = Cyan.colorset;
+			sourceTree = "<group>";
+		};
+		A18AF9A72AC427BD002F1116 /* Filtercolor.colorset */ = {
+			isa = PBXGroup;
+			children = (
+				A18AF9AD2AC4282E002F1116 /* Contents.json */,
+			);
+			path = Filtercolor.colorset;
+			sourceTree = "<group>";
+		};
+		A18AF9A82AC427CB002F1116 /* OrangePrimary.colorset */ = {
+			isa = PBXGroup;
+			children = (
+				A18AF9AC2AC42820002F1116 /* Contents.json */,
+			);
+			path = OrangePrimary.colorset;
+			sourceTree = "<group>";
+		};
+		A18AF9A92AC427D9002F1116 /* OrangeSecondary.colorset */ = {
+			isa = PBXGroup;
+			children = (
+				A18AF9AA2AC427FE002F1116 /* Contents.json */,
+			);
+			path = OrangeSecondary.colorset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,14 +441,19 @@
 				A15078E02ABEF83F00ACACD2 /* LoginView.swift in Sources */,
 				A15078EF2ABF1FEC00ACACD2 /* Expense.swift in Sources */,
 				A15078B32ABEF37E00ACACD2 /* ContentView.swift in Sources */,
+				A18AF99D2AC424F0002F1116 /* FilterView.swift in Sources */,
 				A18AF9892AC22BBB002F1116 /* MonthAnalysisView.swift in Sources */,
-				A15078F52AC01D1300ACACD2 /* DashboardView.swift in Sources */,
+				A18AF99F2AC4250D002F1116 /* TemplateItemView.swift in Sources */,
+				A18AF9952AC42377002F1116 /* NewHome.swift in Sources */,
+				A18AF9972AC423B7002F1116 /* StatisticScreen.swift in Sources */,
 				A18AF97B2AC208FF002F1116 /* MonthBudgetView.swift in Sources */,
 				A18AF9872AC21E8A002F1116 /* ExpensesModel.swift in Sources */,
 				A15078E42ABEFC8B00ACACD2 /* LoginViewModel.swift in Sources */,
 				A18AF9812AC21B5A002F1116 /* AddIncome.swift in Sources */,
 				A15078E62ABF03BD00ACACD2 /* SignUpView.swift in Sources */,
+				A18AF9992AC423F5002F1116 /* Data.swift in Sources */,
 				A18AF9852AC21E7D002F1116 /* ExpensesView.swift in Sources */,
+				A18AF99B2AC424D5002F1116 /* CircularProgressView.swift in Sources */,
 				A15078B12ABEF37E00ACACD2 /* ExpenseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

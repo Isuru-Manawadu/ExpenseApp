@@ -12,7 +12,7 @@ struct SignUpView: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
     @State private var shouldNavigateToLogin = false
-    @State private var shouldNavigateToDashboard = false
+    @State private var shouldNavigateToNewHome = false
 
     var body: some View {
 
@@ -46,7 +46,7 @@ struct SignUpView: View {
                         }
                     }
 
-                BottomControllers(loginVM: loginVM, showAlert: $showAlert, alertMessage: $alertMessage, shouldNavigateToLogin: $shouldNavigateToLogin, shouldNavigateToDashboard: $shouldNavigateToDashboard)
+                BottomControllers(loginVM: loginVM, showAlert: $showAlert, alertMessage: $alertMessage, shouldNavigateToLogin: $shouldNavigateToLogin, shouldNavigateToNewHome: $shouldNavigateToNewHome)
                 Spacer()
             }
 
@@ -54,7 +54,7 @@ struct SignUpView: View {
                 EmptyView()
             }
             
-            NavigationLink(destination: DashboardView(), isActive: $shouldNavigateToDashboard) {
+            NavigationLink(destination: NewHome(), isActive: $shouldNavigateToNewHome) {
                 EmptyView()
             }
         }
@@ -77,7 +77,7 @@ struct BottomControllers: View {
     @Binding var showAlert: Bool
     @Binding var alertMessage: String
     @Binding var shouldNavigateToLogin: Bool
-    @Binding var shouldNavigateToDashboard: Bool
+    @Binding var shouldNavigateToNewHome: Bool
 
     var body: some View {
         VStack(spacing: 20) {
@@ -140,7 +140,7 @@ struct BottomControllers: View {
                                         alertMessage = message
                                         if success {
                                             shouldNavigateToLogin = true
-                                            shouldNavigateToDashboard = true
+                                            shouldNavigateToNewHome = true
                                         }
                                     }
                                 }

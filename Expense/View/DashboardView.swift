@@ -61,6 +61,7 @@ struct DashboardView: View {
             HStack {
                 VStack{
                     Text("Income")
+                    Text("")
                 }}
             .padding()
             .background(Color(red: 0.47, green: 1, blue: 0.52))
@@ -71,6 +72,7 @@ struct DashboardView: View {
             HStack {
                 VStack{
                     Text("Expense")
+                    Text("")
                 }
             }
             .padding()
@@ -88,6 +90,7 @@ struct DashboardView: View {
             //                .shadow(radius: 5)
             
             
+            
             HStack {
                 VStack(alignment: .leading) {
                     Text("Budget For This Month")
@@ -103,7 +106,7 @@ struct DashboardView: View {
                 }
                 Spacer()
             }
-            HStack{
+            VStack{
                 Text("Recent Transactions")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)

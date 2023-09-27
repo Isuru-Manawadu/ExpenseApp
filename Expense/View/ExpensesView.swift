@@ -12,8 +12,8 @@ struct ExpensesView : View {
     @StateObject var ExpenseBV : ExpensesModel = ExpensesModel()
     
     //    @State private var selectedCategory = 0
-//    @State private var selectedCategory: String = ""
-//    let categories = ["Health, transport, Foods"]
+    //    @State private var selectedCategory: String = ""
+    //    let categories = ["Health, transport, Foods"]
     
     
     var body: some View {
@@ -62,54 +62,16 @@ struct ExpensesView : View {
                     
                     
                     
-                    Menu{
-                        Button(role: .destructive){
-                            print("")
-                        }label: {
-                            Text("Health")
-                        }
-                        Button("transport"){
-                            print("")
-                        }
-                        Button("Foods"){
-                            print("")
-                        }
-                        Button("Security"){
-                            print("")
-                        }
-                    } label: {
-                        Text("Category")
-                    } primaryAction: {
-                        print("")
+                    VStack{
+                        RoundedRectangle(cornerRadius: 70)
+                            .foregroundColor(.white)
+                            .frame(height: 50)
+                            .overlay {
+                                SecureField("Category", text: $ExpenseBV.category1)
+                                    .padding(.leading, 10)
+                            }
                     }
-                }
-                    
-                    
-//                    VStack{
-//                        RoundedRectangle(cornerRadius: 70)
-//                            .foregroundColor(.white)
-//                            .frame(height: 50)
-//                            .overlay {
-//                                SecureField("Category", text: $ExpenseBV.category1)
-//                                    .padding(.leading, 10)
-//                            }
-//                    }
-//                    .padding(.horizontal , 20)
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    .padding(.horizontal , 20)
                     
                     
                     VStack{
@@ -136,33 +98,33 @@ struct ExpensesView : View {
                         
                     }
                     
-                    Button {
-                        
-                    } label: {
-                        
-                        ZStack {
-                            LinearGradient(colors: [Color("Gradient 2"), Color("Gradient 2")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
-                                .frame(height: 50)
-                            Text("Clear Fields")
-                                .foregroundColor(.white)
-                        }.padding(.horizontal , 20)
-                        
-                    }
+                    //                    Button {
+                    //
+                    //                    } label: {
+                    //
+                    //                        ZStack {
+                    //                            LinearGradient(colors: [Color("Gradient 2"), Color("Gradient 2")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
+                    //                                .frame(height: 50)
+                    //                            Text("Clear Fields")
+                    //                                .foregroundColor(.white)
+                    //                        }.padding(.horizontal , 20)
+                    //
+                    //                    }
+                    //
+                    //                }.padding()
+                    //
+                    .offset(y: 10)
                     
-                }.padding()
+                    
+                    Spacer()
+                }
                 
-                    .offset(y: -50)
                 
                 
-                Spacer()
             }
-            
-            
-            
         }
     }
-
-
+}
 struct ExpensesView_Previews: PreviewProvider {
     static var previews: some View {
         ExpensesView()

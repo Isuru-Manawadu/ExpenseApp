@@ -11,7 +11,7 @@ struct LoginView: View {
     @StateObject var loginVM: LoginViewModel = LoginViewModel()
     @State private var showAlert = false
     @State private var alertMessage = ""
-    @State private var shouldNavigateToDashboard = false
+    @State private var shouldNavigateToNewHome = false
 
     var body: some View {
         NavigationView {
@@ -88,7 +88,7 @@ struct LoginView: View {
                                             DispatchQueue.main.async {
                                                 if success {
                                                     // Login successful, navigate to DashboardView
-                                                    shouldNavigateToDashboard = true
+                                                    shouldNavigateToNewHome = true
                                                 } else {
                                                     // Login failed, show an alert
                                                     if let message = responseJSON["message"] as? String {
@@ -120,7 +120,7 @@ struct LoginView: View {
                             .offset(x: -30)
                             .foregroundColor(.black)
 
-                        NavigationLink(destination: DashboardView(), isActive: $shouldNavigateToDashboard) {
+                        NavigationLink(destination: NewHome(), isActive: $shouldNavigateToNewHome) {
                             Text("Sign Up")
                                 .foregroundColor(.blue)
                                 .offset(x: 100, y: -40)

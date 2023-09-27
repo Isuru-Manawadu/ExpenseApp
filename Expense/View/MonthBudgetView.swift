@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MonthBudgetView: View {
- 
+    
     @StateObject var MonthBV : MonthBudgetModel = MonthBudgetModel()
     
     var body: some View {
@@ -43,7 +43,7 @@ struct MonthBudgetView: View {
                             }
                     }
                     .padding(.horizontal , 20)
-                                            
+                    
                     VStack{
                         RoundedRectangle(cornerRadius: 70)
                             .foregroundColor(.white)
@@ -65,7 +65,7 @@ struct MonthBudgetView: View {
                             }
                     }
                     .padding(.horizontal , 20)
-                 
+                    
                     Button {
                         
                     } label: {
@@ -79,29 +79,15 @@ struct MonthBudgetView: View {
                         
                     }
                     
-                    Button {
-                        
-                    } label: {
-                        
-                        ZStack {
-                            LinearGradient(colors: [Color("Gradient 2"), Color("Gradient 2")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
-                                .frame(height: 50)
-                            Text("Clear Fields")
-                                .foregroundColor(.white)
-                        }.padding(.horizontal , 20)
-                        
-                    }
+                    .offset(y: 10)
                     
-                }.padding()
+                    
+                    Spacer()
+                }
                 
-                    .offset(y: -30)
                 
                 
-                Spacer()
             }
-            
-            
-            
         }
     }
 }
