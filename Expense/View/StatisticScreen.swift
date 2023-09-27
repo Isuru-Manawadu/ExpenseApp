@@ -42,7 +42,7 @@ struct StatisticScreen: View {
                         }
                         .padding(.horizontal, 20)
                     }
-                    .offset(x: 30, y: 240)
+                    .offset(x: 130, y: 410)
 
                     Button(action: {
                         // Handle checking balance
@@ -58,7 +58,7 @@ struct StatisticScreen: View {
                         }
                         .padding(.horizontal, 20)
                     }
-                    .offset(y: 240)
+                    .offset(y: 330)
 
                     Button(action: {
                         isExpensesViewPresented.toggle() // Toggle ExpensesView
@@ -74,34 +74,49 @@ struct StatisticScreen: View {
                         }
                         .padding(.horizontal, 20)
                     }
-                    .offset(x: -30, y: 240)
+                    .offset(x: -130, y: 240)
 
                     Text("Income")
                         .font(.headline)
                         .foregroundColor(.gray)
-                        .offset(y: -90)
+                        .offset(y: -50)
 
                     Text("$12,345.22")
                         .fontWeight(.bold)
                         .offset(y: -90)
-                }
+                }.offset(y: -100)
             }
-            .offset(y: -80)
+            .offset(y: -130)
             .padding(.bottom)
 
             VStack {
                 Text("$2,789.99")
                     .fontWeight(.bold)
-                    .offset(y: -200)
+                    .offset(y: -290)
 
                 Text("Expenses")
                     .font(.headline)
                     .foregroundColor(.gray)
-                    .offset(y: -200)
+                    .offset(y: -290)
             }
+            
+            
 
             Spacer()
-
+            
+            HStack(alignment: .firstTextBaseline) {
+                              Text("Activity")
+                                  .font(.title2)
+                                  .fontWeight(.bold)
+                              
+                              Text("recently added")
+                                  .font(.footnote)
+                                  .foregroundColor(.gray)
+                                  .fontWeight(.bold)
+                                  .padding(.leading, 10)
+                          }
+            .offset(y: -0)
+            
             VStack(alignment: .leading) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
@@ -110,7 +125,9 @@ struct StatisticScreen: View {
                         }
                     }
                 }
-                .frame(height: 200)
+                .frame(height: 250)
+                .offset(y: -40)
+                
             }
             .padding(.leading, 35)
         }
@@ -120,7 +137,7 @@ struct StatisticScreen: View {
         }
         .sheet(isPresented: $isExpensesViewPresented) {
             ExpensesView()
-            Text("ExpensesView")
+            Text("")
         }
     }
 }
