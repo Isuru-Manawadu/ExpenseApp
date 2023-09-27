@@ -16,7 +16,7 @@ struct StatisticScreen: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack {
                     ForEach(filters, id: \.self) { item in
-                        FilterView(title: item)
+//                        FilterView(title: item)
                     }
                 }
             }
@@ -26,24 +26,59 @@ struct StatisticScreen: View {
             //Pie Chart Section
             ZStack(alignment: .center) {
                 CircularProgressView()
-                    .frame(width: 200, height: 200)
+                    .frame(width: 190, height: 190)
                 //Middle Text
                 VStack{
+                    
+                    Button {
+                        
+                    } label: {
+                        
+                        ZStack {
+                            LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
+                                .frame(width: 200, height: 40)
+                            Text("Add Your Income")
+                                .foregroundColor(.white)
+                        }.padding(.horizontal , 20)
+                            
+                        
+                    }.offset(y: 240)
+                    
+                    Button {
+                        
+                    } label: {
+                        
+                        ZStack {
+                            LinearGradient(colors: [Color("Blue"), Color("Blue")], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea(edges : .top).clipShape(RoundedRectangle(cornerRadius: 70))
+                                .frame(width: 200, height: 40)
+                            Text("Add Your Expense")
+                                .foregroundColor(.white)
+                        }.padding(.horizontal , 20)
+                            
+                        
+                    }.offset(y: 260)
+                    
+                    
                     Text("Income")
                         .font(.headline)
                         .foregroundColor(.gray)
+                        .offset(y: -90)
                     Text("$12,345.22")
                         .fontWeight(.bold)
+                        .offset(y: -90)
                 }
             }
+            .offset(y: -80)
             .padding(.bottom)
             
             VStack{
                 Text("$2,789.99")
                     .fontWeight(.bold)
+                    .offset(y: -200)
                 Text("Expenses")
                     .font(.headline)
                     .foregroundColor(.gray)
+                    .offset(y: -200)
             }
             
             Spacer()
@@ -51,17 +86,17 @@ struct StatisticScreen: View {
             // Templetes section
             VStack(alignment: .leading) {
                 
-                HStack(alignment: .firstTextBaseline) {
-                    Text("Activity")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                    
-                    Text("(recently added)")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                        .fontWeight(.bold)
-                        .padding(.leading, 10)
-                }
+//                HStack(alignment: .firstTextBaseline) {
+//                    Text("Activity")
+//                        .font(.title2)
+//                        .fontWeight(.bold)
+//
+//                    Text("(recently added)")
+//                        .font(.footnote)
+//                        .foregroundColor(.gray)
+//                        .fontWeight(.bold)
+//                        .padding(.leading, 10)
+//                }
                 
                 //Scroll templete
                 ScrollView(.horizontal, showsIndicators: false) {

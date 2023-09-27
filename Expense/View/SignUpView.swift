@@ -32,7 +32,7 @@ struct SignUpView: View {
                                 .frame(width: 100.0, height: 100.0)
                                 .scaledToFit()
 
-                            Text("Register")
+                            Text("Sign Up")
                                 .font(.system(size: 24))
                                 .fontWeight(.bold)
                                 .multilineTextAlignment(.center)
@@ -163,7 +163,7 @@ struct BottomControllers: View {
                         .frame(height: 50)
 
 
-                    Text("Register")
+                    Text("Sign Up")
                         .foregroundColor(.white)
                 }
                 .padding(.horizontal, 20)
